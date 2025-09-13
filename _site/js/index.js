@@ -9,15 +9,15 @@ $(document).ready(function() {
         $(this).find('img').css('display', 'inline-block');
     });
 
-    // Tab functionality for Projects and Hike Photos
-    $('.tabs li').click(function() {
+    // Main navigation tab functionality
+    $('.navbar .tabs li').click(function() {
         var tab_id = $(this).attr('data-tab');
         
-        // Remove active class from all tabs and tab panes
-        $('.tabs li').removeClass('is-active');
-        $('.tab-pane').removeClass('is-active');
+        // Remove active class from all navbar tabs and main tab panes
+        $('.navbar .tabs li').removeClass('is-active');
+        $('.main-tab-pane').removeClass('is-active');
         
-        // Add active class to clicked tab and corresponding pane
+        // Add active class to clicked tab and corresponding main pane
         $(this).addClass('is-active');
         $('#' + tab_id + '-tab').addClass('is-active');
     });

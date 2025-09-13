@@ -99,11 +99,47 @@
     }
 }
 
-// Styles for Projects and Hike Photos section
-.tab-content {
-    margin-top: 2rem;
+// Top Navigation Styling
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    .navbar-brand {
+        .title {
+            color: #363636;
+            font-weight: 600;
+        }
+    }
+    
+    .tabs {
+        ul {
+            border-bottom: none;
+        }
+        
+        li {
+            a {
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    border-bottom-color: #dbdbdb;
+                    background-color: #fafafa;
+                }
+            }
+            
+            &.is-active a {
+                border-bottom-color: #3273dc;
+                color: #3273dc;
+                font-weight: 600;
+            }
+        }
+    }
+}
 
-    .tab-pane {
+// Main Content Tab System
+.main-content {
+    min-height: calc(100vh - 60px);
+    
+    .main-tab-pane {
         display: none;
         
         &.is-active {

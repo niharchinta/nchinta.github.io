@@ -35,88 +35,88 @@
 
 <body>
 
-  <section class="hero">
-    <div class="hero-body container is-max-desktop">
-      <div class="columns">
-
-        <div class="column is-4">
-          <figure class="image portrait">
-            <img src="/images/portrait.jpeg" />
-          </figure>
+  <!-- Top Navigation Header -->
+  <nav class="navbar is-light" role="navigation">
+    <div class="navbar-brand">
+      <h1 class="navbar-item title is-4 mb-0">Nihar Gupta Chinta</h1>
+    </div>
+    
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <div class="tabs is-large">
+          <ul>
+            <li class="is-active" data-tab="about">
+              <a>
+                <span class="icon is-small"><i class="fas fa-user" aria-hidden="true"></i></span>
+                <span>About</span>
+              </a>
+            </li>
+            <li data-tab="hikes">
+              <a>
+                <span class="icon is-small"><i class="fas fa-mountain" aria-hidden="true"></i></span>
+                <span>Hike Photos</span>
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </nav>
 
-        <div class="column">
-          <h1 class="title">
-            <b>Hello, I'm Nihar Gupta Chinta</b>
-          </h1>
-          <div class="content has-text-justified">
-            <p>I am a DevOps Engineer at <a href="https://www.slb.com//">SLB</a> where I build and maintain the infrastructure for the company. I enjoy exploring new technologies and building products that bring my ideas to life.
+  <!-- Main Content Area -->
+  <div class="main-content">
+    
+    <!-- About Tab Content -->
+    <div id="about-tab" class="main-tab-pane is-active">
+      
+      <!-- Personal Introduction Section -->
+      <section class="hero">
+        <div class="hero-body container is-max-desktop">
+          <div class="columns">
+            <div class="column is-4">
+              <figure class="image portrait">
+                <img src="/images/portrait.jpeg" />
+              </figure>
+            </div>
+            <div class="column">
+              <h2 class="title is-2">
+                Hello, I'm Nihar Gupta Chinta
+              </h2>
+              <div class="content has-text-justified">
+                <p>I am a DevOps Engineer at <a href="https://www.slb.com//">SLB</a> where I build and maintain the infrastructure for the company. I enjoy exploring new technologies and building products that bring my ideas to life.
 I received my Master’s degree in Computer Science from the <a href="https://www.umass.edu/">University of Massachusetts Amherst</a> in 2024.</p>
 
-            <div class="buttons">
-              <a class="external-link button is-light" href="cv.html">
-                <span class="icon"><i class="fas fa-file"></i></span>
-                <span>CV</span>
-              </a>
-
-              <!-- <a class="external-link button is-light"
-                href="https://scholar.google.com/citations?user=">
-                <span class="icon"><i class="ai ai-google-scholar"></i></span>
-                <span>Scholar</span>
-              </a> -->
-
-              <a class="external-link button is-light" href="https://github.com/niharchinta">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Github</span>
-              </a>
-
-              <a class="external-link button is-light" href="https://www.linkedin.com/in/nihar-gupta-chinta/">
-                <span class="icon"><i class="fab fa-linkedin-in"></i></span>
-                <span>LinkedIn</span>
-              </a>
+                <div class="buttons">
+                  <a class="external-link button is-light" href="cv.html">
+                    <span class="icon"><i class="fas fa-file"></i></span>
+                    <span>CV</span>
+                  </a>
+                  <a class="external-link button is-light" href="https://github.com/niharchinta">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Github</span>
+                  </a>
+                  <a class="external-link button is-light" href="https://www.linkedin.com/in/nihar-gupta-chinta/">
+                    <span class="icon"><i class="fab fa-linkedin-in"></i></span>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- News. -->
-  <div class="hr">
-    <div class="container">
-      <hr>
-    </div>
-  </div>
-
-  <!-- Projects and Hike Photos Section -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">My Work & Adventures</h2>
-      
-      <!-- Tabs Navigation -->
-      <div class="tabs is-centered is-boxed">
-        <ul>
-          <li class="is-active" data-tab="projects">
-            <a>
-              <span class="icon is-small"><i class="fas fa-code" aria-hidden="true"></i></span>
-              <span>Projects</span>
-            </a>
-          </li>
-          <li data-tab="hikes">
-            <a>
-              <span class="icon is-small"><i class="fas fa-mountain" aria-hidden="true"></i></span>
-              <span>Hike Photos</span>
-            </a>
-          </li>
-        </ul>
+      <!-- Divider -->
+      <div class="hr">
+        <div class="container">
+          <hr>
+        </div>
       </div>
 
-      <!-- Tab Content -->
-      <div class="tab-content">
-        
-        <!-- Projects Tab -->
-        <div id="projects-tab" class="tab-pane is-active">
+      <!-- Projects Section -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3 has-text-centered">My Projects</h2>
           <div class="columns is-multiline">
             
             <!-- Project Card 1 -->
@@ -226,9 +226,15 @@ I received my Master’s degree in Computer Science from the <a href="https://ww
 
           </div>
         </div>
-
-        <!-- Hike Photos Tab -->
-        <div id="hikes-tab" class="tab-pane">
+      </section>
+      
+    </div>
+    
+    <!-- Hike Photos Tab Content -->
+    <div id="hikes-tab" class="main-tab-pane">
+      <section class="section">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3 has-text-centered">My Hiking Adventures</h2>
           
           <!-- Dynamic Hikes from _data/hikes.yml -->
           
@@ -338,18 +344,10 @@ I received my Master’s degree in Computer Science from the <a href="https://ww
           
           
         </div>
-
-      </div>
+      </section>
     </div>
-  </section>
-
-  <!-- Divider -->
-  <div class="hr">
-    <div class="container">
-      <hr>
-    </div>
+    
   </div>
-
 
   <footer class="footer">
     <div class="container">
