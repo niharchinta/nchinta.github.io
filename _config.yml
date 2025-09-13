@@ -32,7 +32,7 @@ url: "https://nchinta.com" # the base hostname & protocol for your site, e.g. ht
 github_username: niharchinta
 # google_scholar: HVZb-5oAAAAJ
 # google_analytics: G-MFWSBLRKG0
-
+linkedin_name: nihar-gupta-chinta
 # Build settings
 theme: minima
 plugins:
