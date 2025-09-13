@@ -89,123 +89,207 @@ layout: null
       <hr>
     </div>
   </div>
-<!-- 
+
+  <!-- Projects and Hike Photos Section -->
   <section class="section">
     <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">My Work & Adventures</h2>
+      
+      <!-- Tabs Navigation -->
+      <div class="tabs is-centered is-boxed">
+        <ul>
+          <li class="is-active" data-tab="projects">
+            <a>
+              <span class="icon is-small"><i class="fas fa-code" aria-hidden="true"></i></span>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li data-tab="hikes">
+            <a>
+              <span class="icon is-small"><i class="fas fa-mountain" aria-hidden="true"></i></span>
+              <span>Hike Photos</span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-      <h2 class="title is-3">Highlights</h2>
-      <div class="columns is-multiline">
-        {% for highlight in site.data.highlights %}
-        <div class="column is-4">
-          <div class="card highlight-card">
-            <div class="card-image">
-              <figure class="image">
-                {% if highlight.video %}
-                <video autoplay loop muted playsinline class="highlight-media">
-                  <source src="./images/{{ highlight.video }}" type="video/mp4">
-                  <img src="./images/{{ highlight.image }}" alt="{{ highlight.title }}">
-                </video>
-                {% else %}
-                <img src="./images/{{ highlight.image }}" alt="{{ highlight.title }}">
-                {% endif %}
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-5 highlight-title">
-                    <a href="{{ highlight.url }}" target="_blank" rel="noopener">{{ highlight.title }}</a>
-                  </p>
+      <!-- Tab Content -->
+      <div class="tab-content">
+        
+        <!-- Projects Tab -->
+        <div id="projects-tab" class="tab-pane is-active">
+          <div class="columns is-multiline">
+            
+            <!-- Project Card 1 -->
+            <div class="column is-4">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://via.placeholder.com/400x300?text=Project+1" alt="Project 1">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-5">Sample Project 1</p>
+                      <p class="subtitle is-6">Web Application</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Description of your project goes here. Add technologies used and key features.
+                    <br>
+                    <small class="has-text-grey">Built with: React, Node.js</small>
+                    <br>
+                    <div class="buttons mt-3">
+                      <a class="button is-small is-primary" href="#" target="_blank">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                        <span>Code</span>
+                      </a>
+                      <a class="button is-small is-info" href="#" target="_blank">
+                        <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                        <span>Demo</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="content highlight-description">
-                {{ highlight.description }}
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="column is-4">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://via.placeholder.com/400x300?text=Project+2" alt="Project 2">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-5">Sample Project 2</p>
+                      <p class="subtitle is-6">DevOps Tool</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    Another project description. Highlight the problem solved and your contribution.
+                    <br>
+                    <small class="has-text-grey">Built with: Python, Docker, AWS</small>
+                    <br>
+                    <div class="buttons mt-3">
+                      <a class="button is-small is-primary" href="#" target="_blank">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                        <span>Code</span>
+                      </a>
+                      <a class="button is-small is-info" href="#" target="_blank">
+                        <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                        <span>Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- Project Card 3 -->
+            <div class="column is-4">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://via.placeholder.com/400x300?text=Project+3" alt="Project 3">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-5">Sample Project 3</p>
+                      <p class="subtitle is-6">Machine Learning</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    ML project description. Explain the model, dataset, and results achieved.
+                    <br>
+                    <small class="has-text-grey">Built with: Python, TensorFlow, Jupyter</small>
+                    <br>
+                    <div class="buttons mt-3">
+                      <a class="button is-small is-primary" href="#" target="_blank">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                        <span>Code</span>
+                      </a>
+                      <a class="button is-small is-info" href="#" target="_blank">
+                        <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                        <span>Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-        {% endfor %}
+
+        <!-- Hike Photos Tab -->
+        <div id="hikes-tab" class="tab-pane">
+          
+          <!-- Dynamic Hikes from _data/hikes.yml -->
+          {% for hike_data in site.data.hikes %}
+          {% assign hike_id = hike_data[0] %}
+          {% assign hike = hike_data[1] %}
+          
+          <div class="hike-section mb-6">
+            <div class="has-text-centered mb-4">
+              <h3 class="title is-4">{{ hike.title }}</h3>
+              <div class="subtitle is-6 has-text-grey">
+                <span class="icon-text">
+                  <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                  <span>{{ hike.location }}</span>
+                </span>
+                <span class="mx-2">•</span>
+                <span class="icon-text">
+                  <span class="icon"><i class="fas fa-calendar"></i></span>
+                  <span>{{ hike.date }}</span>
+                </span>
+              </div>
+              <div class="tags is-centered">
+                <span class="tag is-info">{{ hike.elevation }}</span>
+                <span class="tag is-success">{{ hike.distance }}</span>
+                <span class="tag is-warning">{{ hike.difficulty }}</span>
+              </div>
+              <p class="content">{{ hike.description }}</p>
+            </div>
+            
+            <div class="columns is-multiline">
+              {% for photo in hike.photos %}
+              <div class="column is-6-tablet is-4-desktop">
+                <figure class="image is-square">
+                  <img src="{{ '/images/hikes/' | append: hike_id | append: '/' | append: photo | relative_url }}" 
+                       alt="{{ hike.title }} - {{ photo }}" 
+                       class="hike-photo" 
+                       data-hike="{{ hike.title }}">
+                </figure>
+              </div>
+              {% endfor %}
+            </div>
+            
+            <!-- Divider between hikes -->
+            {% unless forloop.last %}
+            <hr class="my-6">
+            {% endunless %}
+          </div>
+          {% endfor %}
+          
+        </div>
+
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <!-- Divider between Highlights and Publications -->
+  <!-- Divider -->
   <div class="hr">
     <div class="container">
       <hr>
     </div>
   </div>
-
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Publications</h2>
-
-      {% for publication in site.data.publications %}
-      <div class="publication-block columns">
-
-        <div class="column is-2">
-          <div class="publication-image {% if publication.image_mouseover %}publication-mousecell{% endif %}">
-            {% if publication.image_mouseover contains "mp4" %}
-            <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
-              <source src="./images/{{ publication.image_mouseover }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            {% endif %}
-            <img alt="{{ publication.title }}" src="./images/{{ publication.image }}" />
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title"><a href="{{ publication.project_page }}">{{ publication.title }}</a></h3>
-            <div class="publication-authors">
-              {% for author_id in publication.authors %}
-              {% assign author = site.data.authors[author_id] %}
-              <span class="author-block {% if author.is_me %}author-me{% endif %}">
-                {% if author.is_me %}
-                {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}{% if forloop.last == false %},{%
-                endif %}
-                {% else %}
-                <a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
-                  }}</a>{% if forloop.last == false %},{% endif %}
-                {% endif %}
-              </span>
-              {% endfor %}
-            </div>
-            <div class="publication-venue">
-              <span>{{ publication.venue }}</span>
-              {% for award in publication.awards %}
-              <span class="publication-venue-emph">{{ award }}<span>
-                  {% endfor %}
-            </div>
-            <p class="publication-description">{{ publication.description }}</p>
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" href="{{ publication.project_page }}">
-                <span class="icon"><i class="fas fa-globe-asia"></i></span>
-                <span>Project Page</span>
-              </a>
-              <a class="external-link button is-small is-ghost"
-                href="https://arxiv.org/pdf/{{ publication.arxiv }}.pdf">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                <span>PDF</span>
-              </a>
-              <a class="external-link button is-small is-ghost" href="https://arxiv.org/abs/{{ publication.arxiv }}">
-                <span class="icon"><i class="ai ai-arxiv"></i></span>
-                <span>arXiv</span>
-              </a>
-              {% if publication.github %}
-              <a class="external-link button is-small is-ghost" href="https://github.com/{{ publication.github }}">
-                <span class="icon"><i class="fa fab fa-github"></i></span>
-                <span>Code</span>
-              </a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </section> -->
 
 
   <footer class="footer">

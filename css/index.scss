@@ -98,3 +98,107 @@
         margin-top: 0.5em !important;
     }
 }
+
+// Styles for Projects and Hike Photos section
+.tab-content {
+    margin-top: 2rem;
+
+    .tab-pane {
+        display: none;
+        
+        &.is-active {
+            display: block;
+        }
+    }
+}
+
+.hike-photo {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.highlight-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Project cards styling
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Hike sections styling
+.hike-section {
+    .title {
+        color: #363636;
+        margin-bottom: 1.5rem;
+    }
+    
+    .subtitle {
+        margin-bottom: 1rem;
+        
+        .icon-text {
+            display: inline-flex;
+            align-items: center;
+            
+            .icon {
+                margin-right: 0.25rem;
+            }
+        }
+    }
+    
+    .tags {
+        margin-bottom: 1rem;
+        
+        .tag {
+            margin: 0.25rem;
+            font-weight: 500;
+        }
+    }
+    
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        color: #4a4a4a;
+        line-height: 1.6;
+    }
+}
+
+// Modal styling for enlarged hike photos
+.modal {
+    z-index: 9999;
+    
+    .modal-content {
+        max-width: 90vw;
+        max-height: 90vh;
+        
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+    
+    .modal-close {
+        background: rgba(255, 255, 255, 0.9);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+    }
+}

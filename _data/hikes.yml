@@ -1,0 +1,25 @@
+hike1:
+  title: Mountain Peak Adventure
+  location: Rocky Mountain National Park
+  date: '2024-08-15'
+  elevation: 2,800 ft
+  distance: 8.5 miles
+  difficulty: Moderate
+  description: Amazing sunrise hike to the mountain peak with breathtaking views of
+    the valley below. The trail was challenging but rewarding with beautiful wildflowers
+    along the way.
+  photos:
+  - photo1.jpg
+  - photo2.jpg
+hike2:
+  title: Lakeside Trail Exploration
+  location: Glacier National Park
+  date: '2024-09-02'
+  elevation: 1,500 ft
+  distance: 6.2 miles
+  difficulty: Easy
+  description: Peaceful walk around the crystal-clear mountain lake with incredible
+    reflections and wildlife sightings including eagles and deer.
+  photos:
+  - photo1.jpg
+  - photo2.jpg
