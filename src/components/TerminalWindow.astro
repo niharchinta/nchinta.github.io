@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+}
+
+const { title, id } = Astro.props;
+---
+
+<section class="terminal-window" id={id}>
+  <div class="title-bar">
+    <span class="dots">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+    </span>
+    <span class="filename">{title}</span>
+  </div>
+  <div class="body">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .terminal-window {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    background: var(--panel-body);
+  }
+
+  .title-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+  }
+
+  .dot-red { background: var(--dot-red); }
+  .dot-yellow { background: var(--dot-yellow); }
+  .dot-green { background: var(--dot-green); }
+
+  .filename {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .body {
+    padding: 1.5rem;
+  }
+</style>

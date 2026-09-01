@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.jpeg';
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <Image src={portrait} alt="Portrait of Nihar Gupta Chinta" width={160} height={160} class="portrait" />
+    <div class="prompt">
+      <p><span class="accent">&gt;</span> nihar@portfolio<span class="text-muted">:~$</span> whoami</p>
+      <h1>Nihar Gupta Chinta</h1>
+      <p class="subtitle">Release Engineer / DevOps Engineer @ Schlumberger</p>
+      <p class="summary">
+        Building scalable infrastructure with Kubernetes and Terraform, automating CI/CD pipelines
+        on Azure, and looking for ways to make deployments faster and more reliable.
+        <span class="blink accent">_</span>
+      </p>
+      <div class="cta">
+        <a class="btn btn-accent" href="/cv">[ View CV ]</a>
+        <a class="btn" href="https://github.com/niharchinta" target="_blank" rel="noopener">[ GitHub ]</a>
+        <a class="btn" href="https://www.linkedin.com/in/nihar-gupta-chinta/" target="_blank" rel="noopener">[ LinkedIn ]</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .portrait {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .prompt {
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .accent {
+    color: var(--accent-green);
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 0.4rem;
+  }
+
+  .subtitle {
+    color: var(--accent-blue);
+    margin-top: 0;
+  }
+
+  .summary {
+    color: var(--text-muted);
+    max-width: 540px;
+  }
+
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+</style>

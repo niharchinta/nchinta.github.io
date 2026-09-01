@@ -1,0 +1,99 @@
+---
+// Vanilla-JS click-to-enlarge lightbox for any <img class="lightbox-photo">
+// on the page. Ported from the old jQuery modal, framework-free.
+---
+
+<div id="lightbox-overlay" class="lightbox-overlay" hidden>
+  <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-image" src="" alt="" />
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<style>
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 2rem;
+  }
+
+  .lightbox-overlay[hidden] {
+    display: none;
+  }
+
+  .lightbox-figure {
+    margin: 0;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+  }
+
+  .lightbox-figure img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .lightbox-figure figcaption {
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.25em 0.6em;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const overlay = document.getElementById('lightbox-overlay') as HTMLDivElement;
+  const image = document.getElementById('lightbox-image') as HTMLImageElement;
+  const caption = document.getElementById('lightbox-caption') as HTMLElement;
+  const closeBtn = document.getElementById('lightbox-close') as HTMLButtonElement;
+
+  function openLightbox(src: string, alt: string) {
+    image.src = src;
+    image.alt = alt;
+    caption.textContent = alt;
+    overlay.hidden = false;
+  }
+
+  function closeLightbox() {
+    overlay.hidden = true;
+    image.src = '';
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.matches('.lightbox-photo')) {
+      const img = target as HTMLImageElement;
+      openLightbox(img.src, img.alt);
+    }
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLightbox();
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>

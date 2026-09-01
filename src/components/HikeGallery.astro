@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import TerminalWindow from './TerminalWindow.astro';
+import type { Hike } from '../lib/hikes';
+
+interface Props {
+  hike: Hike;
+}
+
+const { hike } = Astro.props;
+---
+
+<TerminalWindow title={`~/hikes/${hike.id}/`}>
+  <h3>{hike.title}</h3>
+  <p class="meta text-muted">
+    {hike.location} • {hike.date}
+  </p>
+  <div class="tags">
+    <span class="pill">{hike.elevation}</span>
+    <span class="pill">{hike.distance}</span>
+    <span class="pill">{hike.difficulty}</span>
+  </div>
+  <p class="description">{hike.description}</p>
+  <div class="photos">
+    {hike.photos.map((photo, i) => (
+      <Image
+        src={photo}
+        alt={`${hike.title} - photo ${i + 1}`}
+        width={400}
+        height={400}
+        class="lightbox-photo"
+      />
+    ))}
+  </div>
+</TerminalWindow>
+
+<style>
+  .meta {
+    margin-top: 0;
+  }
+
+  .tags {
+    margin-bottom: 0.75rem;
+  }
+
+  .description {
+    color: var(--text-muted);
+  }
+
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .photos :global(img) {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .photos :global(img:hover) {
+    transform: scale(1.03);
+  }
+</style>

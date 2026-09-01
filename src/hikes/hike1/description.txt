@@ -1,0 +1,7 @@
+title: Mountain Peak Adventure
+location: Rocky Mountain National Park
+date: 2024-08-15
+elevation: 2,800 ft
+distance: 8.5 miles
+difficulty: Moderate
+description: Amazing sunrise hike to the mountain peak with breathtaking views of the valley below. The trail was challenging but rewarding with beautiful wildflowers along the way.

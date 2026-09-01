@@ -1,0 +1,42 @@
+---
+const email = 'niharchinta333@gmail.com';
+const githubUsername = 'niharchinta';
+const linkedinName = 'nihar-gupta-chinta';
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href={`mailto:${email}`} title="Email">email</a>
+      <a href={`https://github.com/${githubUsername}`} title="GitHub" target="_blank" rel="noopener">github</a>
+      <a href={`https://www.linkedin.com/in/${linkedinName}/`} title="LinkedIn" target="_blank" rel="noopener">linkedin</a>
+    </div>
+    <p class="text-muted small">© {new Date().getFullYear()} Nihar Gupta Chinta</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+    padding: 2rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .small {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+</style>

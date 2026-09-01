@@ -1,0 +1,47 @@
+---
+import SkillBadge from './SkillBadge.astro';
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="card">
+  <h3>{project.title}</h3>
+  <p class="text-muted">{project.description}</p>
+  <div class="tech">
+    {project.tech.map((t) => <SkillBadge label={t} />)}
+  </div>
+  <div class="actions">
+    {project.codeUrl && <a class="btn" href={project.codeUrl} target="_blank" rel="noopener">[ View Code ]</a>}
+    {project.demoUrl && <a class="btn" href={project.demoUrl} target="_blank" rel="noopener">[ Live Demo ]</a>}
+    <a class="btn btn-accent" href={project.feedbackFormUrl} target="_blank" rel="noopener">[ Leave Feedback ]</a>
+  </div>
+</div>
+
+<style>
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    background: var(--panel);
+  }
+
+  .card h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .tech {
+    margin: 0.75rem 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+</style>

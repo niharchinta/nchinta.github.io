@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TerminalWindow from '../components/TerminalWindow.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import SkillBadge from '../components/SkillBadge.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import HobbyCard from '../components/HobbyCard.astro';
+import { experience } from '../data/experience';
+import { skillCategories } from '../data/skills';
+import { projects } from '../data/projects';
+import { hobbies } from '../data/hobbies';
+---
+
+<BaseLayout title="Nihar Gupta Chinta">
+  <Hero />
+
+  <div class="container">
+    <section class="section">
+      <TerminalWindow title="~/experience.log" id="experience">
+        {experience.map((entry) => <ExperienceItem entry={entry} />)}
+      </TerminalWindow>
+    </section>
+
+    <section class="section">
+      <TerminalWindow title="~/skills.json" id="skills">
+        {skillCategories.map((cat) => (
+          <div class="skill-group">
+            <h3>{cat.category}</h3>
+            <div>
+              {cat.skills.map((skill) => <SkillBadge label={skill} />)}
+            </div>
+          </div>
+        ))}
+      </TerminalWindow>
+    </section>
+
+    <section class="section">
+      <TerminalWindow title="~/projects/" id="projects">
+        <div class="grid">
+          {projects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </TerminalWindow>
+    </section>
+
+    <section class="section">
+      <TerminalWindow title="~/hobbies.yml" id="hobbies">
+        <div class="grid">
+          {hobbies.map((hobby) => <HobbyCard hobby={hobby} />)}
+        </div>
+      </TerminalWindow>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .skill-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-group h3 {
+    font-size: 1rem;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+</style>

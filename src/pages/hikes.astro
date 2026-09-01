@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HikeGallery from '../components/HikeGallery.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { getHikes } from '../lib/hikes';
+
+const hikes = getHikes();
+---
+
+<BaseLayout title="Hikes & Trips — Nihar Gupta Chinta">
+  <div class="container">
+    <section class="section">
+      <h1>~/hobbies/hikes</h1>
+      <p class="text-muted intro">
+        Drop photos into a hike's folder and they show up here automatically on the next build —
+        no data file to edit.
+      </p>
+      <div class="stack">
+        {hikes.map((hike) => <HikeGallery hike={hike} />)}
+      </div>
+    </section>
+  </div>
+  <Lightbox />
+</BaseLayout>
+
+<style>
+  .intro {
+    margin-top: 0;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import type { Hobby } from '../data/hobbies';
+
+interface Props {
+  hobby: Hobby;
+}
+
+const { hobby } = Astro.props;
+const Tag = hobby.href ? 'a' : 'div';
+---
+
+<Tag class="card" href={hobby.href}>
+  <h3>{hobby.name}</h3>
+  <p class="text-muted">{hobby.description}</p>
+</Tag>
+
+<style>
+  .card {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    background: var(--panel);
+    color: inherit;
+  }
+
+  a.card:hover {
+    border-color: var(--accent-green);
+    text-decoration: none;
+  }
+
+  .card h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .card p {
+    margin: 0;
+  }
+</style>
