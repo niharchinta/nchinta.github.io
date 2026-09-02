@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TerminalWindow from '../components/TerminalWindow.astro';
 import { prints } from '../data/prints';
@@ -12,9 +13,16 @@ import { prints } from '../data/prints';
       <div class="stack">
         {prints.map((print) => (
           <TerminalWindow title={`~/models/${print.title.toLowerCase().replace(/\s+/g, '-')}.stl`}>
-            <h3>{print.title}</h3>
-            {print.description && <p class="text-muted">{print.description}</p>}
-            <a class="btn btn-accent" href={print.file} download>[ Download STL ]</a>
+            <div class="print">
+              {print.image && (
+                <Image src={print.image} alt={print.title} width={320} height={320} class="photo" />
+              )}
+              <div class="info">
+                <h3>{print.title}</h3>
+                {print.description && <p class="text-muted">{print.description}</p>}
+                <a class="btn btn-accent" href={print.file} download>[ Download STL ]</a>
+              </div>
+            </div>
           </TerminalWindow>
         ))}
       </div>
@@ -31,6 +39,27 @@ import { prints } from '../data/prints';
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .print {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .info {
+    flex: 1;
+    min-width: 200px;
   }
 
   h3 {
