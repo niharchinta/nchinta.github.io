@@ -13,20 +13,12 @@ export const hobbies: Hobby[] = [
     href: '/hikes',
   },
   {
-    name: 'Photography',
-    description: 'Coming soon.',
-  },
-  {
     name: '3D Printing',
     description: 'Things I\'ve printed.',
     href: '/3d-printing',
   },
   {
     name: 'Rug Tufting',
-    description: 'Coming soon.',
-  },
-  {
-    name: 'Drawing',
     description: 'Coming soon.',
   },
 ];
