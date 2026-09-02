@@ -6,6 +6,7 @@ import ExperienceItem from '../components/ExperienceItem.astro';
 import SkillBadge from '../components/SkillBadge.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import HobbyCard from '../components/HobbyCard.astro';
+import Contact from '../components/Contact.astro';
 import { experience } from '../data/experience';
 import { skillCategories } from '../data/skills';
 import { projects, SHOW_PROJECTS } from '../data/projects';
@@ -51,6 +52,10 @@ import { hobbies } from '../data/hobbies';
           {hobbies.map((hobby) => <HobbyCard hobby={hobby} />)}
         </div>
       </TerminalWindow>
+    </section>
+
+    <section class="section">
+      <Contact />
     </section>
   </div>
 </BaseLayout>
