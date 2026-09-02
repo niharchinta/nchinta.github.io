@@ -21,6 +21,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       'Blueprint Commitment Award (Schlumberger)',
       'Certified Kubernetes Application Developer (CKAD, CNCF)',
+      'Thumbs Up Award (Schlumberger)',
     ],
   },
 ];
