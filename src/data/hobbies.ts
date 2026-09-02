@@ -18,7 +18,8 @@ export const hobbies: Hobby[] = [
   },
   {
     name: '3D Printing',
-    description: 'Coming soon.',
+    description: 'Things I\'ve printed.',
+    href: '/3d-printing',
   },
   {
     name: 'Rug Tufting',

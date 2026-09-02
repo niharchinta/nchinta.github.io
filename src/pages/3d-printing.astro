@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TerminalWindow from '../components/TerminalWindow.astro';
+import { prints } from '../data/prints';
+---
+
+<BaseLayout title="3D Printing — Nihar Gupta Chinta">
+  <div class="container">
+    <section class="section">
+      <h1>~/hobbies/3d-printing</h1>
+      <p class="text-muted intro">A few things I've printed.</p>
+      <div class="stack">
+        {prints.map((print) => (
+          <TerminalWindow title={`~/models/${print.title.toLowerCase().replace(/\s+/g, '-')}.stl`}>
+            <h3>{print.title}</h3>
+            {print.description && <p class="text-muted">{print.description}</p>}
+            <a class="btn btn-accent" href={print.file} download>[ Download STL ]</a>
+          </TerminalWindow>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    margin-top: 0;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .btn {
+    margin-top: 0.75rem;
+  }
+</style>
