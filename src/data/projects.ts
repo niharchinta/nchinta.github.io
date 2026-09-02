@@ -18,19 +18,19 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'Sample Project One',
-    description: 'Placeholder description — replace with a real project, what it does, and why you built it.',
+    description: 'Placeholder description — replace with a real project: what it does and why you built it.',
     tech: ['TBD'],
     feedbackFormUrl: PLACEHOLDER_FEEDBACK_FORM_URL,
   },
   {
     title: 'Sample Project Two',
-    description: 'Placeholder description — replace with a real project, what it does, and why you built it.',
+    description: 'Placeholder description — replace with a real project: what it does and why you built it.',
     tech: ['TBD'],
     feedbackFormUrl: PLACEHOLDER_FEEDBACK_FORM_URL,
   },
   {
     title: 'Sample Project Three',
-    description: 'Placeholder description — replace with a real project, what it does, and why you built it.',
+    description: 'Placeholder description — replace with a real project: what it does and why you built it.',
     tech: ['TBD'],
     feedbackFormUrl: PLACEHOLDER_FEEDBACK_FORM_URL,
   },
