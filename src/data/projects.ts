@@ -1,3 +1,7 @@
+// Flip to true once you have real projects to show — hides the section
+// (and its nav link) entirely while false.
+export const SHOW_PROJECTS = false;
+
 // TODO: replace with your real Google Form URL once you have one.
 export const PLACEHOLDER_FEEDBACK_FORM_URL = 'https://forms.gle/REPLACE_ME_WITH_REAL_GOOGLE_FORM';
 

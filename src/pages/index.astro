@@ -8,7 +8,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import HobbyCard from '../components/HobbyCard.astro';
 import { experience } from '../data/experience';
 import { skillCategories } from '../data/skills';
-import { projects } from '../data/projects';
+import { projects, SHOW_PROJECTS } from '../data/projects';
 import { hobbies } from '../data/hobbies';
 ---
 
@@ -35,13 +35,15 @@ import { hobbies } from '../data/hobbies';
       </TerminalWindow>
     </section>
 
-    <section class="section">
-      <TerminalWindow title="~/projects/" id="projects">
-        <div class="grid">
-          {projects.map((project) => <ProjectCard project={project} />)}
-        </div>
-      </TerminalWindow>
-    </section>
+    {SHOW_PROJECTS && (
+      <section class="section">
+        <TerminalWindow title="~/projects/" id="projects">
+          <div class="grid">
+            {projects.map((project) => <ProjectCard project={project} />)}
+          </div>
+        </TerminalWindow>
+      </section>
+    )}
 
     <section class="section">
       <TerminalWindow title="~/hobbies.yml" id="hobbies">

@@ -1,8 +1,10 @@
 ---
+import { SHOW_PROJECTS } from '../data/projects';
+
 const links = [
   { href: '/#experience', label: 'experience' },
   { href: '/#skills', label: 'skills' },
-  { href: '/#projects', label: 'projects' },
+  ...(SHOW_PROJECTS ? [{ href: '/#projects', label: 'projects' }] : []),
   { href: '/#hobbies', label: 'hobbies' },
   { href: '/cv', label: 'cv' },
 ];
