@@ -16,7 +16,7 @@ export const rugs: Rug[] = [
     image: bullsImage,
   },
   {
-    title: 'Heart Rug',
+    title: 'Leaf Rug',
     image: heartImage,
   },
 ];
