@@ -19,6 +19,7 @@ export const hobbies: Hobby[] = [
   },
   {
     name: 'Rug Tufting',
-    description: 'Coming soon.',
+    description: 'Rugs I\'ve tufted.',
+    href: '/rug-tufting',
   },
 ];

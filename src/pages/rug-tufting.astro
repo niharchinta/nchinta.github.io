@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TerminalWindow from '../components/TerminalWindow.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { rugs } from '../data/rugs';
+---
+
+<BaseLayout title="Rug Tufting — Nihar Gupta Chinta">
+  <div class="container">
+    <section class="section">
+      <h1>~/hobbies/rug-tufting</h1>
+      <p class="text-muted intro">A few rugs I've tufted.</p>
+      <TerminalWindow title="~/rugs/">
+        <div class="grid">
+          {rugs.map((rug) => (
+            <figure class="rug">
+              <Image
+                src={rug.image}
+                alt={rug.title}
+                width={360}
+                height={360}
+                class="lightbox-photo"
+              />
+              <figcaption>{rug.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </TerminalWindow>
+    </section>
+  </div>
+  <Lightbox />
+</BaseLayout>
+
+<style>
+  .intro {
+    margin-top: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .rug {
+    margin: 0;
+  }
+
+  .rug :global(img) {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .rug :global(img:hover) {
+    transform: scale(1.03);
+  }
+
+  .rug figcaption {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+</style>
