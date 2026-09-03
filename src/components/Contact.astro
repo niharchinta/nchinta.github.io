@@ -32,9 +32,6 @@ const location = 'Houston, USA';
       <label for="contact-name">Name</label>
       <input id="contact-name" name="name" type="text" placeholder="Your name" required />
 
-      <label for="contact-email">Email</label>
-      <input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
-
       <label for="contact-message">Message</label>
       <textarea
         id="contact-message"
@@ -54,10 +51,9 @@ const location = 'Houston, USA';
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = form.name.value;
-    const senderEmail = form.email.value;
     const message = form.message.value;
     const subject = encodeURIComponent(`Message from ${name}`);
-    const body = encodeURIComponent(`${message}\n\nFrom: ${senderEmail}`);
+    const body = encodeURIComponent(message);
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   });
 </script>
